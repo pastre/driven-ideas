@@ -1,10 +1,10 @@
 import Foundation
+
+enum RepositoryError: Error {
+    case notRegistered(String)
+}
+
 final class ComponentRepository {
-    
-    enum RepositoryError: Error {
-        case notRegistered(String)
-    }
-    
     private var components: [Component.Type] = []
     
     func component(for type: String) throws -> Component.Type {

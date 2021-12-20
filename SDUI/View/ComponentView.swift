@@ -1,8 +1,14 @@
 import UIKit
 
-class ComponentView<Model>: UIView, ComponentRendering {
+protocol ActionDelegate: AnyObject {
+    func perform(action: AnyAction?)
+}
+
+class ComponentView<Model>: UIView, ComponentRendering where Model: Component {
     
     public let model: Model
+    
+    public weak var delegate: ActionDelegate?
     
     init(model: Model) {
         self.model = model
@@ -19,6 +25,10 @@ class ComponentView<Model>: UIView, ComponentRendering {
     func addSubviews() { fatalError() }
     func constraintSubviews() { fatalError() }
     func configureAdditionalSettings() {}
+    
+    final func performAction() {
+        delegate?.perform(action: model.action)
+    }
 }
 
-typealias DrivenView<Model> = ComponentView<Model> & ComponentRendering
+typealias DrivenView<Model: Component> = ComponentView<Model> & ComponentRendering

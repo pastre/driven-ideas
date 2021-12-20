@@ -3,17 +3,26 @@ import UIKit
 import Combine
 
 class ViewController: UIViewController {
-    let container = DrivenEngine()
+    private let componentRepository: ComponentRepository = {
+        let repository = ComponentRepository()
+        repository.register(TextModel.self)
+        repository.register(ButtonModel.self)
+        return repository
+        
+    }()
+    
+    private lazy var engine = DrivenEngine(
+        componentRepository: componentRepository
+    )
     
     override func loadView() {
-        view = container.drivenView
+        view = engine.drivenView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let data = a.data(using: .utf8)!
-        container.register(TextModel.self)
-        try! container.render(data: data)
+        try! engine.render(data: data)
     }
 }
 
@@ -21,7 +30,7 @@ let a = """
 [
     {
         "type": "text",
-        "content" : "asd"
+        "content": "asd"
     },
     {
         "type": "text",
@@ -34,11 +43,13 @@ let a = """
     {
         "type": "text",
         "content" : "asd"
+    },
+    {
+        "type": "button",
+        "title" : "clica ai"
     }
 ]
-
 """
-
 @resultBuilder
 struct ConstraintCollector {
     static func buildBlock(_ components: NSLayoutConstraint...) -> [NSLayoutConstraint] {
