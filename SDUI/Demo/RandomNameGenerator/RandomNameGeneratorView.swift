@@ -1,6 +1,6 @@
 import UIKit
 
-final class ButtonView: ComponentView<ButtonModel> {
+final class RandomNameGeneratorView: ComponentView<RandomNameGeneratorModel> {
     private lazy var button: UIButton = {
         let view = UIButton()
         view.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
@@ -20,8 +20,8 @@ final class ButtonView: ComponentView<ButtonModel> {
         }
     }
     
-    override func configureAdditionalSettings() {
-        button.setTitle(model.title, for: .normal)
+    override func renderModel() {
+        button.setTitle(model.name, for: .normal)
         button.setTitleColor(.blue, for: .normal)
     }
     

@@ -4,25 +4,64 @@ import Combine
 
 class ViewController: UIViewController {
     private let componentRepository: ComponentRepository = {
-        let repository = ComponentRepository()
-        repository.register(TextModel.self)
-        repository.register(ButtonModel.self)
+        var repository = ComponentRepository()
+        repository.append(TextModel.self)
+        repository.append(ButtonModel.self)
+        repository.append(RandomNameGeneratorModel.self)
         return repository
+    }()
+    
+    private let actionRepository: ActionRepository = {
+        var repository = ActionRepository()
+        repository.append(ButtonAction.self)
+        repository.append(RandomNameGeneratorAction.self)
+        repository.append(NavigationAction.self)
+        repository.append(OpenURLAction.self)
+        return repository
+    }()
+    
+    private lazy var useCaseRepository: UseCaseRepository = {
+        let repository = UseCaseRepository()
         
+        repository.register(for: PrintUseCase.self) {
+            PrintUseCase()
+        }
+        
+        repository.register(for: RenameUseCase.self) {
+            RenameUseCase()
+        }
+        
+        repository.register(for: NavigateUseCase.self) { [unowned self] in
+            NavigateUseCase(viewController: self)
+        }
+        
+        repository.register(for: OpenURLUseCase.self) {
+            OpenURLUseCase()
+        }
+        
+        return repository
     }()
     
     private lazy var engine = DrivenEngine(
-        componentRepository: componentRepository
+        componentRepository: componentRepository,
+        actionRepository: actionRepository,
+        useCaseRepository: useCaseRepository
     )
     
     override func loadView() {
-        view = engine.drivenView
+        view = engine.view
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let data = a.data(using: .utf8)!
-        try! engine.render(data: data)
+        do {
+            try engine.render(data: data)
+        } catch let DecodingError.keyNotFound(codingKey, context) {
+            print(codingKey, context)
+        } catch {
+            print("outro")
+        }
     }
 }
 
@@ -42,14 +81,41 @@ let a = """
     },
     {
         "type": "text",
-        "content" : "asd"
+        "content" : "wqe"
     },
     {
         "type": "button",
-        "title" : "clica ai"
+        "title" : "clica ai",
+        "action": {
+            "type": "buttonAction",
+            "stringToPrint": "testeee"
+        }
+    },
+    {
+        "type": "randomNameGenerator",
+        "name": "Generate new item",
+        "action": {
+            "type": "generateNewName"
+        }
+    },
+    {
+        "type": "button",
+        "title": "Navigate",
+        "action": {
+            "type": "navigation"
+        }
+    },
+    {
+        "type": "button",
+        "title": "Open URL",
+        "action": {
+            "type": "openURL",
+            "url": "https://google.com"
+        }
     }
 ]
 """
+
 @resultBuilder
 struct ConstraintCollector {
     static func buildBlock(_ components: NSLayoutConstraint...) -> [NSLayoutConstraint] {

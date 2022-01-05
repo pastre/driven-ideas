@@ -14,17 +14,28 @@
 		D738A923276014B8009E842A /* ComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A922276014B8009E842A /* ComponentView.swift */; };
 		D738A926276014DC009E842A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A925276014DC009E842A /* TextView.swift */; };
 		D738A928276014F6009E842A /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A927276014F6009E842A /* TextModel.swift */; };
-		D738A92A27601529009E842A /* ComponentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A92927601529009E842A /* ComponentRepository.swift */; };
+		D738A92A27601529009E842A /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A92927601529009E842A /* Repositories.swift */; };
 		D738A92D276015DD009E842A /* DrivenEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A92C276015DD009E842A /* DrivenEngine.swift */; };
 		D738A92F276015FB009E842A /* DrivenTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A92E276015FB009E842A /* DrivenTableViewAdapter.swift */; };
 		D738A93127601612009E842A /* DrivenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A93027601612009E842A /* DrivenCell.swift */; };
 		D738A9332760162C009E842A /* AnyDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A9322760162C009E842A /* AnyDecodable.swift */; };
+		D759D6D42785CDA10047E937 /* Action+AnyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D759D6D32785CDA10047E937 /* Action+AnyAction.swift */; };
+		D759D6D62785D5CD0047E937 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D759D6D52785D5CD0047E937 /* UseCase.swift */; };
+		D777BBEE27833AE30080FEED /* OpenURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777BBED27833AE30080FEED /* OpenURL.swift */; };
 		D7A5BF29273DC28C008098C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5BF28273DC28C008098C8 /* AppDelegate.swift */; };
 		D7A5BF2B273DC28C008098C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5BF2A273DC28C008098C8 /* SceneDelegate.swift */; };
 		D7A5BF2D273DC28C008098C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5BF2C273DC28C008098C8 /* ViewController.swift */; };
 		D7A5BF30273DC28C008098C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A5BF2E273DC28C008098C8 /* Main.storyboard */; };
 		D7A5BF32273DC28F008098C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A5BF31273DC28F008098C8 /* Assets.xcassets */; };
 		D7A5BF35273DC28F008098C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A5BF33273DC28F008098C8 /* LaunchScreen.storyboard */; };
+		D7C945CC2774B6DE002DA625 /* ButtonAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C945CB2774B6DE002DA625 /* ButtonAction.swift */; };
+		D7C945CE2774B70C002DA625 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C945CD2774B70C002DA625 /* Injected.swift */; };
+		D7C945D02774BF87002DA625 /* PrintUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C945CF2774BF87002DA625 /* PrintUseCase.swift */; };
+		D7C945D82774FD56002DA625 /* RandomNameGeneratorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C945D72774FD56002DA625 /* RandomNameGeneratorModel.swift */; };
+		D7C945DA2774FD68002DA625 /* RandomNameGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C945D92774FD68002DA625 /* RandomNameGeneratorView.swift */; };
+		D7C945DC2775079E002DA625 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C945DB2775079E002DA625 /* Navigation.swift */; };
+		D7C945DE2778B5F4002DA625 /* RandomNameGeneratorAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C945DD2778B5F4002DA625 /* RandomNameGeneratorAction.swift */; };
+		D7C945E02778B610002DA625 /* RenameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C945DF2778B610002DA625 /* RenameUseCase.swift */; };
 		D7CADA762770B3DE00F30465 /* ComponentDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CADA752770B3DE00F30465 /* ComponentDecoder.swift */; };
 		D7CADA782770B41600F30465 /* Component+AnyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CADA772770B41600F30465 /* Component+AnyComponent.swift */; };
 		D7CADA7A2770B5C900F30465 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CADA792770B5C900F30465 /* Action.swift */; };
@@ -40,11 +51,14 @@
 		D738A922276014B8009E842A /* ComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentView.swift; sourceTree = "<group>"; };
 		D738A925276014DC009E842A /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		D738A927276014F6009E842A /* TextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModel.swift; sourceTree = "<group>"; };
-		D738A92927601529009E842A /* ComponentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentRepository.swift; sourceTree = "<group>"; };
+		D738A92927601529009E842A /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		D738A92C276015DD009E842A /* DrivenEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivenEngine.swift; sourceTree = "<group>"; };
 		D738A92E276015FB009E842A /* DrivenTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivenTableViewAdapter.swift; sourceTree = "<group>"; };
 		D738A93027601612009E842A /* DrivenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivenCell.swift; sourceTree = "<group>"; };
 		D738A9322760162C009E842A /* AnyDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDecodable.swift; sourceTree = "<group>"; };
+		D759D6D32785CDA10047E937 /* Action+AnyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Action+AnyAction.swift"; sourceTree = "<group>"; };
+		D759D6D52785D5CD0047E937 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		D777BBED27833AE30080FEED /* OpenURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenURL.swift; sourceTree = "<group>"; };
 		D7A5BF25273DC28C008098C8 /* SDUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A5BF28273DC28C008098C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7A5BF2A273DC28C008098C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +67,14 @@
 		D7A5BF31273DC28F008098C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7A5BF34273DC28F008098C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7A5BF36273DC28F008098C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7C945CB2774B6DE002DA625 /* ButtonAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAction.swift; sourceTree = "<group>"; };
+		D7C945CD2774B70C002DA625 /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
+		D7C945CF2774BF87002DA625 /* PrintUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintUseCase.swift; sourceTree = "<group>"; };
+		D7C945D72774FD56002DA625 /* RandomNameGeneratorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNameGeneratorModel.swift; sourceTree = "<group>"; };
+		D7C945D92774FD68002DA625 /* RandomNameGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNameGeneratorView.swift; sourceTree = "<group>"; };
+		D7C945DB2775079E002DA625 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		D7C945DD2778B5F4002DA625 /* RandomNameGeneratorAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNameGeneratorAction.swift; sourceTree = "<group>"; };
+		D7C945DF2778B610002DA625 /* RenameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenameUseCase.swift; sourceTree = "<group>"; };
 		D7CADA752770B3DE00F30465 /* ComponentDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDecoder.swift; sourceTree = "<group>"; };
 		D7CADA772770B41600F30465 /* Component+AnyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Component+AnyComponent.swift"; sourceTree = "<group>"; };
 		D7CADA792770B5C900F30465 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
@@ -76,9 +98,11 @@
 			children = (
 				D7CADA792770B5C900F30465 /* Action.swift */,
 				D738A92027601485009E842A /* Component.swift */,
-				D738A92927601529009E842A /* ComponentRepository.swift */,
+				D738A92927601529009E842A /* Repositories.swift */,
 				D738A92C276015DD009E842A /* DrivenEngine.swift */,
 				D738A917276013FF009E842A /* TypeHolder.swift */,
+				D7C945CD2774B70C002DA625 /* Injected.swift */,
+				D759D6D52785D5CD0047E937 /* UseCase.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -90,6 +114,7 @@
 				D738A9322760162C009E842A /* AnyDecodable.swift */,
 				D7CADA752770B3DE00F30465 /* ComponentDecoder.swift */,
 				D7CADA772770B41600F30465 /* Component+AnyComponent.swift */,
+				D759D6D32785CDA10047E937 /* Action+AnyAction.swift */,
 			);
 			path = Decoding;
 			sourceTree = "<group>";
@@ -108,8 +133,12 @@
 		D738A924276014D1009E842A /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				D7CADA7E2770BD2300F30465 /* Button */,
+				D7C945D62774FD4E002DA625 /* RandomNameGenerator */,
+				D7C945D12774FC67002DA625 /* UseCases */,
+				D7CADA7E2770BD2300F30465 /* SimpleButton */,
 				D7CADA7D2770BD1A00F30465 /* Text */,
+				D7C945DB2775079E002DA625 /* Navigation.swift */,
+				D777BBED27833AE30080FEED /* OpenURL.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -148,6 +177,25 @@
 			path = SDUI;
 			sourceTree = "<group>";
 		};
+		D7C945D12774FC67002DA625 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				D7C945CF2774BF87002DA625 /* PrintUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		D7C945D62774FD4E002DA625 /* RandomNameGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				D7C945D72774FD56002DA625 /* RandomNameGeneratorModel.swift */,
+				D7C945D92774FD68002DA625 /* RandomNameGeneratorView.swift */,
+				D7C945DD2778B5F4002DA625 /* RandomNameGeneratorAction.swift */,
+				D7C945DF2778B610002DA625 /* RenameUseCase.swift */,
+			);
+			path = RandomNameGenerator;
+			sourceTree = "<group>";
+		};
 		D7CADA7D2770BD1A00F30465 /* Text */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,13 +205,14 @@
 			path = Text;
 			sourceTree = "<group>";
 		};
-		D7CADA7E2770BD2300F30465 /* Button */ = {
+		D7CADA7E2770BD2300F30465 /* SimpleButton */ = {
 			isa = PBXGroup;
 			children = (
 				D7CADA7B2770BCCD00F30465 /* ButtonModel.swift */,
 				D7CADA7F2770BD2F00F30465 /* ButtonView.swift */,
+				D7C945CB2774B6DE002DA625 /* ButtonAction.swift */,
 			);
-			path = Button;
+			path = SimpleButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,16 +286,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D759D6D42785CDA10047E937 /* Action+AnyAction.swift in Sources */,
 				D738A91E2760145C009E842A /* ComponentRendering.swift in Sources */,
 				D7CADA7A2770B5C900F30465 /* Action.swift in Sources */,
+				D7C945DE2778B5F4002DA625 /* RandomNameGeneratorAction.swift in Sources */,
 				D7CADA802770BD2F00F30465 /* ButtonView.swift in Sources */,
+				D7C945CE2774B70C002DA625 /* Injected.swift in Sources */,
 				D7CADA7C2770BCCD00F30465 /* ButtonModel.swift in Sources */,
 				D738A9332760162C009E842A /* AnyDecodable.swift in Sources */,
+				D759D6D62785D5CD0047E937 /* UseCase.swift in Sources */,
 				D7CADA762770B3DE00F30465 /* ComponentDecoder.swift in Sources */,
 				D738A92127601485009E842A /* Component.swift in Sources */,
+				D7C945E02778B610002DA625 /* RenameUseCase.swift in Sources */,
 				D7A5BF2D273DC28C008098C8 /* ViewController.swift in Sources */,
+				D7C945DC2775079E002DA625 /* Navigation.swift in Sources */,
 				D7A5BF29273DC28C008098C8 /* AppDelegate.swift in Sources */,
 				D738A923276014B8009E842A /* ComponentView.swift in Sources */,
+				D7C945D82774FD56002DA625 /* RandomNameGeneratorModel.swift in Sources */,
+				D7C945CC2774B6DE002DA625 /* ButtonAction.swift in Sources */,
+				D777BBEE27833AE30080FEED /* OpenURL.swift in Sources */,
+				D7C945DA2774FD68002DA625 /* RandomNameGeneratorView.swift in Sources */,
 				D7CADA782770B41600F30465 /* Component+AnyComponent.swift in Sources */,
 				D738A91B27601441009E842A /* AnyComponent.swift in Sources */,
 				D738A928276014F6009E842A /* TextModel.swift in Sources */,
@@ -254,8 +313,9 @@
 				D738A92F276015FB009E842A /* DrivenTableViewAdapter.swift in Sources */,
 				D738A93127601612009E842A /* DrivenCell.swift in Sources */,
 				D7A5BF2B273DC28C008098C8 /* SceneDelegate.swift in Sources */,
-				D738A92A27601529009E842A /* ComponentRepository.swift in Sources */,
+				D738A92A27601529009E842A /* Repositories.swift in Sources */,
 				D738A918276013FF009E842A /* TypeHolder.swift in Sources */,
+				D7C945D02774BF87002DA625 /* PrintUseCase.swift in Sources */,
 				D738A92D276015DD009E842A /* DrivenEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +400,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -394,6 +455,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

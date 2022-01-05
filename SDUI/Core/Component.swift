@@ -1,8 +1,8 @@
 protocol Component: TypeHolder, Decodable {
     var view: DrivenView<Self> { get }
-    var action: AnyAction? { get }
+    var action: Action? { get }
 }
 
 extension Component {
-    var action: AnyAction? { nil }
+    var action: Action? { nil }
 }

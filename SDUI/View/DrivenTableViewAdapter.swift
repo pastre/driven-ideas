@@ -9,12 +9,6 @@ typealias DrivenTableViewAdapting = DrivenTableViewManager & UITableViewDataSour
 final class DrivenTableViewAdapter: NSObject, DrivenTableViewAdapting {
     private var components: [Component] = []
     
-    private weak var actionDelegate: ActionDelegate?
-    
-    init(actionDelegate: ActionDelegate) {
-        self.actionDelegate = actionDelegate
-    }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
@@ -26,7 +20,6 @@ final class DrivenTableViewAdapter: NSObject, DrivenTableViewAdapting {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(DrivenCell.self, at: indexPath)
         let component = components[indexPath.row]
-        
         cell.configure(drivenView: component.view)
         return cell
     }
@@ -34,5 +27,4 @@ final class DrivenTableViewAdapter: NSObject, DrivenTableViewAdapting {
     func configure(using components: [Component]) {
         self.components = components
     }
-    
 }

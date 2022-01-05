@@ -1,10 +1,18 @@
 protocol Action: TypeHolder, Decodable {
-    var delegate: ActionDelegate? { get set }
+    func perform(using component: Component)
 }
 
-extension Action {
-    init(from decoder: Decoder) throws {
-        delegate = nil
-        try self.init(from: decoder)
+@propertyWrapper
+final class ComponentAction {
+    var wrappedValue: Action?
+    
+    init(wrappedValue: Action? = nil) {
+        self.wrappedValue = wrappedValue
+    }
+}
+
+extension ComponentAction: Decodable {
+    convenience init(from decoder: Decoder) throws {
+        self.init()
     }
 }

@@ -1,17 +1,18 @@
 import UIKit
 
-final class TextView: ComponentView<TextModel> {
-    private lazy var label: UILabel = {
-        let view = UILabel()
+final class ButtonView: ComponentView<ButtonModel> {
+    private lazy var button: UIButton = {
+        let view = UIButton()
+        view.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
         return view
     }()
     
     override func addSubviews() {
-        addSubview(label)
+        addSubview(button)
     }
     
     override func constraintSubviews() {
-        label.layout {
+        button.layout {
             $0.topAnchor.constraint(equalTo: topAnchor)
             $0.leadingAnchor.constraint(equalTo: leadingAnchor)
             $0.trailingAnchor.constraint(equalTo: trailingAnchor)
@@ -20,10 +21,15 @@ final class TextView: ComponentView<TextModel> {
     }
     
     override func configureAdditionalSettings() {
-        label.textColor = .cyan
+        button.setTitleColor(.blue, for: .normal)
     }
     
     override func renderModel() {
-        label.text = model.content
+        button.setTitle(model.title, for: .normal)
+    }
+    
+    @objc
+    private func handleTap() {
+        performAction()
     }
 }

@@ -1,14 +1,8 @@
 import UIKit
 
-protocol ActionDelegate: AnyObject {
-    func perform(action: AnyAction?)
-}
-
 class ComponentView<Model>: UIView, ComponentRendering where Model: Component {
-    
+
     public let model: Model
-    
-    public weak var delegate: ActionDelegate?
     
     init(model: Model) {
         self.model = model
@@ -16,6 +10,7 @@ class ComponentView<Model>: UIView, ComponentRendering where Model: Component {
         addSubviews()
         constraintSubviews()
         configureAdditionalSettings()
+        renderModel()
     }
     
     required init?(coder: NSCoder) {
@@ -25,9 +20,10 @@ class ComponentView<Model>: UIView, ComponentRendering where Model: Component {
     func addSubviews() { fatalError() }
     func constraintSubviews() { fatalError() }
     func configureAdditionalSettings() {}
+    func renderModel() { fatalError() }
     
     final func performAction() {
-        delegate?.perform(action: model.action)
+        model.action?.perform(using: model)
     }
 }
 
