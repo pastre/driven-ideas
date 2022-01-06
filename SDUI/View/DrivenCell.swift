@@ -3,7 +3,7 @@ import UIKit
 final class DrivenCell: UITableViewCell {
     
     override func prepareForReuse() {
-        contentView.subviews.removeAll()
+        contentView.subviews.removeSubviews()
     }
     
     func configure(drivenView: UIView) {

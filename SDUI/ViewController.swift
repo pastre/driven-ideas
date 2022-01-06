@@ -2,12 +2,14 @@ import Foundation
 import UIKit
 import Combine
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     private let componentRepository: ComponentRepository = {
         var repository = ComponentRepository()
         repository.append(TextModel.self)
         repository.append(ButtonModel.self)
         repository.append(RandomNameGeneratorModel.self)
+        repository.append(BannerCarouselModel.self)
+        repository.append(BannerModel.self)
         return repository
     }()
     
@@ -54,67 +56,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let data = a.data(using: .utf8)!
+        let data = Payloads.b
         do {
+            print("Rendering...")
             try engine.render(data: data)
-        } catch let DecodingError.keyNotFound(codingKey, context) {
-            print(codingKey, context)
+            print("Rendered!")
         } catch {
-            print("outro")
+            // TODO log error on crashlytics...
+            print(error)
         }
     }
 }
 
-let a = """
-[
-    {
-        "type": "text",
-        "content": "asd"
-    },
-    {
-        "type": "text",
-        "content" : "asd"
-    },
-    {
-        "type": "text",
-        "content" : "asd"
-    },
-    {
-        "type": "text",
-        "content" : "wqe"
-    },
-    {
-        "type": "button",
-        "title" : "clica ai",
-        "action": {
-            "type": "buttonAction",
-            "stringToPrint": "testeee"
-        }
-    },
-    {
-        "type": "randomNameGenerator",
-        "name": "Generate new item",
-        "action": {
-            "type": "generateNewName"
-        }
-    },
-    {
-        "type": "button",
-        "title": "Navigate",
-        "action": {
-            "type": "navigation"
-        }
-    },
-    {
-        "type": "button",
-        "title": "Open URL",
-        "action": {
-            "type": "openURL",
-            "url": "https://google.com"
-        }
-    }
-]
-"""
 
 @resultBuilder
 struct ConstraintCollector {
@@ -131,7 +84,7 @@ extension UIView {
 }
 
 extension Array where Element == UIView {
-    func removeAll() {
+    func removeSubviews() {
         forEach { $0.removeFromSuperview() }
     }
 }
@@ -139,7 +92,7 @@ extension Array where Element == UIView {
 extension NSObject {
     static var uniqueIdentifier: String { String(describing: self) }
 }
-
+ 
 extension UITableView {
     func register<T>(_ type: T.Type) where T: UITableViewCell {
         register(type, forCellReuseIdentifier: type.uniqueIdentifier)
@@ -151,4 +104,46 @@ extension UITableView {
         else { fatalError() }
         return cell
     }
+}
+
+extension UICollectionView {
+    func register<T>(_ type: T.Type) where T: UICollectionViewCell {
+        register(type, forCellWithReuseIdentifier: type.uniqueIdentifier)
+    }
+}
+
+extension UICollectionView {
+    func dequeue<T>(_ type: T.Type, at indexPath: IndexPath) -> T where T: UICollectionViewCell {
+        guard let cell = dequeueReusableCell(withReuseIdentifier: type.uniqueIdentifier, for: indexPath) as? T else {
+            fatalError()
+        }
+        return cell
+    }
+}
+
+
+open class CodedCollectionViewCell: UICollectionViewCell, CodedViewLifecycle {
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubviews()
+        constraintSubviews()
+        configureAdditionalSettings()
+    }
+    
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        addSubviews()
+        constraintSubviews()
+        configureAdditionalSettings()
+    }
+    
+    func addSubviews() {
+        fatalError()
+    }
+    
+    func constraintSubviews() {
+        fatalError()
+    }
+    
+    func configureAdditionalSettings() {}
 }

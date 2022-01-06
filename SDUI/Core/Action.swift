@@ -4,10 +4,14 @@ protocol Action: TypeHolder, Decodable {
 
 @propertyWrapper
 final class ComponentAction {
-    var wrappedValue: Action?
+    private(set) var wrappedValue: Action?
     
     init(wrappedValue: Action? = nil) {
         self.wrappedValue = wrappedValue
+    }
+    
+    func resolve(using action: Action) {
+        wrappedValue = action
     }
 }
 

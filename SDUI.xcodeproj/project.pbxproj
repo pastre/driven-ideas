@@ -20,8 +20,12 @@
 		D738A93127601612009E842A /* DrivenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A93027601612009E842A /* DrivenCell.swift */; };
 		D738A9332760162C009E842A /* AnyDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A9322760162C009E842A /* AnyDecodable.swift */; };
 		D759D6D42785CDA10047E937 /* Action+AnyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D759D6D32785CDA10047E937 /* Action+AnyAction.swift */; };
-		D759D6D62785D5CD0047E937 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D759D6D52785D5CD0047E937 /* UseCase.swift */; };
 		D777BBEE27833AE30080FEED /* OpenURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777BBED27833AE30080FEED /* OpenURL.swift */; };
+		D7938C202785F06700DF48EC /* BannerCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7938C1F2785F06700DF48EC /* BannerCarousel.swift */; };
+		D7938C232785F2CF00DF48EC /* BannerCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7938C222785F2CF00DF48EC /* BannerCarouselView.swift */; };
+		D7938C252785F61200DF48EC /* Payloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7938C242785F61200DF48EC /* Payloads.swift */; };
+		D7938C272785FC1400DF48EC /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7938C262785FC1400DF48EC /* Banner.swift */; };
+		D7938C2A2785FC3A00DF48EC /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7938C292785FC3A00DF48EC /* BannerView.swift */; };
 		D7A5BF29273DC28C008098C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5BF28273DC28C008098C8 /* AppDelegate.swift */; };
 		D7A5BF2B273DC28C008098C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5BF2A273DC28C008098C8 /* SceneDelegate.swift */; };
 		D7A5BF2D273DC28C008098C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5BF2C273DC28C008098C8 /* ViewController.swift */; };
@@ -57,8 +61,12 @@
 		D738A93027601612009E842A /* DrivenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivenCell.swift; sourceTree = "<group>"; };
 		D738A9322760162C009E842A /* AnyDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDecodable.swift; sourceTree = "<group>"; };
 		D759D6D32785CDA10047E937 /* Action+AnyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Action+AnyAction.swift"; sourceTree = "<group>"; };
-		D759D6D52785D5CD0047E937 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		D777BBED27833AE30080FEED /* OpenURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenURL.swift; sourceTree = "<group>"; };
+		D7938C1F2785F06700DF48EC /* BannerCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCarousel.swift; sourceTree = "<group>"; };
+		D7938C222785F2CF00DF48EC /* BannerCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCarouselView.swift; sourceTree = "<group>"; };
+		D7938C242785F61200DF48EC /* Payloads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payloads.swift; sourceTree = "<group>"; };
+		D7938C262785FC1400DF48EC /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		D7938C292785FC3A00DF48EC /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		D7A5BF25273DC28C008098C8 /* SDUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A5BF28273DC28C008098C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7A5BF2A273DC28C008098C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,7 +110,6 @@
 				D738A92C276015DD009E842A /* DrivenEngine.swift */,
 				D738A917276013FF009E842A /* TypeHolder.swift */,
 				D7C945CD2774B70C002DA625 /* Injected.swift */,
-				D759D6D52785D5CD0047E937 /* UseCase.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -133,6 +140,15 @@
 		D738A924276014D1009E842A /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				D7938C1E2785F05C00DF48EC /* V2 */,
+				D7938C1D2785F05400DF48EC /* V1 */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		D7938C1D2785F05400DF48EC /* V1 */ = {
+			isa = PBXGroup;
+			children = (
 				D7C945D62774FD4E002DA625 /* RandomNameGenerator */,
 				D7C945D12774FC67002DA625 /* UseCases */,
 				D7CADA7E2770BD2300F30465 /* SimpleButton */,
@@ -140,7 +156,34 @@
 				D7C945DB2775079E002DA625 /* Navigation.swift */,
 				D777BBED27833AE30080FEED /* OpenURL.swift */,
 			);
-			path = Demo;
+			path = V1;
+			sourceTree = "<group>";
+		};
+		D7938C1E2785F05C00DF48EC /* V2 */ = {
+			isa = PBXGroup;
+			children = (
+				D7938C282785FC3000DF48EC /* Banner */,
+				D7938C212785F12000DF48EC /* BannerCarousel */,
+			);
+			path = V2;
+			sourceTree = "<group>";
+		};
+		D7938C212785F12000DF48EC /* BannerCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				D7938C1F2785F06700DF48EC /* BannerCarousel.swift */,
+				D7938C222785F2CF00DF48EC /* BannerCarouselView.swift */,
+			);
+			path = BannerCarousel;
+			sourceTree = "<group>";
+		};
+		D7938C282785FC3000DF48EC /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				D7938C262785FC1400DF48EC /* Banner.swift */,
+				D7938C292785FC3A00DF48EC /* BannerView.swift */,
+			);
+			path = Banner;
 			sourceTree = "<group>";
 		};
 		D7A5BF1C273DC28C008098C8 = {
@@ -168,6 +211,7 @@
 				D738A91C27601451009E842A /* View */,
 				D7A5BF28273DC28C008098C8 /* AppDelegate.swift */,
 				D7A5BF2A273DC28C008098C8 /* SceneDelegate.swift */,
+				D7938C242785F61200DF48EC /* Payloads.swift */,
 				D7A5BF2C273DC28C008098C8 /* ViewController.swift */,
 				D7A5BF2E273DC28C008098C8 /* Main.storyboard */,
 				D7A5BF31273DC28F008098C8 /* Assets.xcassets */,
@@ -289,12 +333,12 @@
 				D759D6D42785CDA10047E937 /* Action+AnyAction.swift in Sources */,
 				D738A91E2760145C009E842A /* ComponentRendering.swift in Sources */,
 				D7CADA7A2770B5C900F30465 /* Action.swift in Sources */,
+				D7938C202785F06700DF48EC /* BannerCarousel.swift in Sources */,
 				D7C945DE2778B5F4002DA625 /* RandomNameGeneratorAction.swift in Sources */,
 				D7CADA802770BD2F00F30465 /* ButtonView.swift in Sources */,
 				D7C945CE2774B70C002DA625 /* Injected.swift in Sources */,
 				D7CADA7C2770BCCD00F30465 /* ButtonModel.swift in Sources */,
 				D738A9332760162C009E842A /* AnyDecodable.swift in Sources */,
-				D759D6D62785D5CD0047E937 /* UseCase.swift in Sources */,
 				D7CADA762770B3DE00F30465 /* ComponentDecoder.swift in Sources */,
 				D738A92127601485009E842A /* Component.swift in Sources */,
 				D7C945E02778B610002DA625 /* RenameUseCase.swift in Sources */,
@@ -309,12 +353,16 @@
 				D7CADA782770B41600F30465 /* Component+AnyComponent.swift in Sources */,
 				D738A91B27601441009E842A /* AnyComponent.swift in Sources */,
 				D738A928276014F6009E842A /* TextModel.swift in Sources */,
+				D7938C252785F61200DF48EC /* Payloads.swift in Sources */,
 				D738A926276014DC009E842A /* TextView.swift in Sources */,
 				D738A92F276015FB009E842A /* DrivenTableViewAdapter.swift in Sources */,
 				D738A93127601612009E842A /* DrivenCell.swift in Sources */,
 				D7A5BF2B273DC28C008098C8 /* SceneDelegate.swift in Sources */,
 				D738A92A27601529009E842A /* Repositories.swift in Sources */,
 				D738A918276013FF009E842A /* TypeHolder.swift in Sources */,
+				D7938C232785F2CF00DF48EC /* BannerCarouselView.swift in Sources */,
+				D7938C2A2785FC3A00DF48EC /* BannerView.swift in Sources */,
+				D7938C272785FC1400DF48EC /* Banner.swift in Sources */,
 				D7C945D02774BF87002DA625 /* PrintUseCase.swift in Sources */,
 				D738A92D276015DD009E842A /* DrivenEngine.swift in Sources */,
 			);

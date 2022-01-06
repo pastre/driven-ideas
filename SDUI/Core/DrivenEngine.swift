@@ -44,6 +44,13 @@ final class DrivenEngine {
         let components: [Component] = try response.map {
             let type = try componentRepository.component(for: $0.type)
             let component = try type.init(from: $0)
+            
+            try component.resolveNestedComponents(
+                from: $0,
+                componentRepository: componentRepository,
+                actionRepository: actionRepository,
+                useCaseRepository: useCaseRepository
+            )
             try component.resolveAction(
                 using: actionRepository,
                 useCaseRepository: useCaseRepository,
