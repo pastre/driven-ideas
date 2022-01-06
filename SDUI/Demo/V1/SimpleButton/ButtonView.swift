@@ -1,4 +1,5 @@
 import UIKit
+import CoreBFF
 
 final class ButtonView: ComponentView<ButtonModel> {
     private lazy var button: UIButton = {

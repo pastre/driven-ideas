@@ -1,4 +1,5 @@
 import Foundation
+import CoreBFF
 
 struct ButtonModel: Component {
     static var type: String { "button" }

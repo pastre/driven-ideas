@@ -1,4 +1,5 @@
 import UIKit
+import CoreBFF
 
 final class TextView: ComponentView<TextModel> {
     private lazy var label: UILabel = {

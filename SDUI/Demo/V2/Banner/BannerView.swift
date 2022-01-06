@@ -1,4 +1,6 @@
 import UIKit
+import CoreBFF
+
 
 final class BannerView: ComponentView<BannerModel> {
     // MARK: - Properties

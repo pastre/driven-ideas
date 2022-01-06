@@ -1,4 +1,5 @@
 import Foundation
+import CoreBFF
 
 struct BannerModel: Component {
     

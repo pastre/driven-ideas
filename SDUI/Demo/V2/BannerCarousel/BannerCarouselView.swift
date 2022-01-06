@@ -1,4 +1,5 @@
 import UIKit
+import CoreBFF
 
 final class BannerCarouselView: ComponentView<BannerCarouselModel> {
     // MARK: - UI Components

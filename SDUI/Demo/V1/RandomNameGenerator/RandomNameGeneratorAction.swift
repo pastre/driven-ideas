@@ -1,3 +1,5 @@
+import CoreBFF
+
 struct RandomNameGeneratorAction: Action {
     
     static var type: String { "generateNewName" }

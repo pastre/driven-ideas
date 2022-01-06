@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import CoreBFF
 
 final class RandomNameGeneratorModel: Component {
     static var type: String { "randomNameGenerator" }

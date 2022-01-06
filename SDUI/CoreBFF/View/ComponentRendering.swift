@@ -1,10 +1,10 @@
-protocol CodedViewLifecycle {
+public protocol CodedViewLifecycle {
     func addSubviews()
     func constraintSubviews()
     func configureAdditionalSettings()
     
 }
 
-protocol ComponentRendering: CodedViewLifecycle {
+public protocol ComponentRendering: CodedViewLifecycle {
     func renderModel()
 }

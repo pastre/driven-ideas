@@ -1,4 +1,5 @@
 import UIKit
+import CoreBFF
 
 final class NavigateUseCase {
     private weak var viewController: UIViewController?

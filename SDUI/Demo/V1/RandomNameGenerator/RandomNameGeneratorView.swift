@@ -1,4 +1,6 @@
 import UIKit
+import CoreBFF
+
 
 final class RandomNameGeneratorView: ComponentView<RandomNameGeneratorModel> {
     private lazy var button: UIButton = {

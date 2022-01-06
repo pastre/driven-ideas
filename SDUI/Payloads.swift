@@ -17,7 +17,11 @@ enum Payloads {
                         "action": [
                             "type": "navigation"
                         ]
-                    ]
+                    ],
+                    [
+                        "type": "banner",
+                        "imageURL": "https://random.dog/0942ac81-f65b-4503-8220-40ad3c28a94e.jpg"
+                    ],
                 ]
             ]
         ]

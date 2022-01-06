@@ -1,15 +1,6 @@
-protocol Component: TypeHolder, Decodable {
-    var view: DrivenView<Self> { get }
-    var action: Action? { get }
-}
-
-extension Component {
-    var action: Action? { nil }
-}
-
 @propertyWrapper
-final class ChildComponent {
-    var wrappedValue: [Component]
+public final class ChildComponent {
+    public var wrappedValue: [Component]
     
     init(_ wrappedValue: [Component]) {
         self.wrappedValue = wrappedValue
@@ -37,7 +28,8 @@ final class ChildComponent {
 
 
 extension ChildComponent: Decodable {
-    convenience init(from decoder: Decoder) throws {
+    convenience public init(from decoder: Decoder) throws {
         self.init([])
     }
 }
+

@@ -1,3 +1,5 @@
+import CoreBFF
+
 struct ButtonAction: Action {
     
     let stringToPrint: String

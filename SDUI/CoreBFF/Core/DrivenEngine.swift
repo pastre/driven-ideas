@@ -1,6 +1,6 @@
 import UIKit
 
-final class DrivenEngine {
+public final class DrivenEngine {
     // MARK: - Dependencies
     
     private let componentRepository: ComponentRepository
@@ -19,11 +19,11 @@ final class DrivenEngine {
         return view
     }()
     
-    weak var view: UITableView? { drivenView }
+    public weak var view: UITableView? { drivenView }
     
     // MARK: - Initialization
     
-    init(
+    public init(
         componentRepository: ComponentRepository,
         actionRepository: ActionRepository,
         useCaseRepository: UseCaseRepository,
@@ -39,7 +39,7 @@ final class DrivenEngine {
         notificationCenter.removeObserver(self)
     }
    
-    func render(data: Data) throws {
+    public func render(data: Data) throws {
         let response = try JSONDecoder().decode([AnyComponent].self, from: data)
         let components: [Component] = try response.map {
             let type = try componentRepository.component(for: $0.type)

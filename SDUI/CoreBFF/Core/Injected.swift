@@ -1,15 +1,15 @@
-protocol InjectedResolving: Decodable {
+public protocol InjectedResolving: Decodable {
     init()
     func resolveIfNeeded(using repository: UseCaseRepository)
 }
 
 @propertyWrapper
-final class Injected<T>: InjectedResolving {
+public final class Injected<T>: InjectedResolving {
     // MARK: - Inner types
     
-    typealias ErrorHandler = (Error<T>) -> Void
+    public typealias ErrorHandler = (Error<T>) -> Void
     
-    enum Error<T>: Swift.Error {
+    public enum Error<T>: Swift.Error {
         case unresolved(T.Type)
         case notRegistered(T.Type)
     }
@@ -21,7 +21,7 @@ final class Injected<T>: InjectedResolving {
     // MARK: - Properties
     
     private var value: T?
-    var wrappedValue: T {
+    public var wrappedValue: T {
         guard let value = value else {
             errorHandler(.unresolved(T.self))
             preconditionFailure()
@@ -31,23 +31,23 @@ final class Injected<T>: InjectedResolving {
     
     // MARK: - Initialization
     
-    init(errorHandler: ErrorHandler? = nil) {
+    public init(errorHandler: ErrorHandler? = nil) {
         self.errorHandler = errorHandler ?? {
             preconditionFailure($0.localizedDescription)
         }
     }
     
-    convenience init() {
+    public convenience init() {
         self.init(errorHandler: nil)
     }
     
-    convenience init(from decoder: Decoder) throws {
+    public convenience init(from decoder: Decoder) throws {
         self.init()
     }
     
     // MARK: - Internal API
     
-    func resolveIfNeeded(using repository: UseCaseRepository) {
+    public func resolveIfNeeded(using repository: UseCaseRepository) {
         guard value == nil else { return }
         guard let resolved = repository.resolve(T.self) else {
             errorHandler(.notRegistered(T.self))
@@ -57,17 +57,9 @@ final class Injected<T>: InjectedResolving {
     }
 }
 
-extension KeyedDecodingContainer {
+public extension KeyedDecodingContainer {
     /// Ignore injected properties on JSON decoding
     func decode<T>(_ type: T.Type, forKey key: KeyedDecodingContainer<K>.Key) throws -> T where T: InjectedResolving {
-        T.init()
-    }
-}
-
-
-extension KeyedDecodingContainer {
-    /// Ignore injected properties on JSON decoding
-    func decode<T>(_ type: T.Type, forKey key: KeyedDecodingContainer<K>.Key) throws -> T where T: ComponentAction {
         T.init()
     }
 }

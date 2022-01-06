@@ -1,4 +1,5 @@
 import UIKit
+import CoreBFF
 
 final class OpenURLUseCase {
     func execute(using url: URL) {

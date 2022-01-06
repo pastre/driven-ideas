@@ -4,18 +4,22 @@ enum RepositoryError: Error {
     case notRegistered(String)
 }
 
-final class UseCaseRepository {
+public final class UseCaseRepository {
     // MARK: - Inner types
-    typealias DependencyFactory = () -> AnyObject
+    public typealias DependencyFactory = () -> AnyObject
     
     // MARK: - Properties
     
     private var dependencyFactories = [NSString : DependencyFactory]()
     private var dependencies: NSMapTable<NSString, AnyObject> = .init(keyOptions: .strongMemory, valueOptions: .weakMemory)
     
+    // MARK: - Initialization
+    
+    public init() {}
+    
     // MARK: - Repository
     
-    func resolve<T>(_ type: T.Type) -> T? {
+    public func resolve<T>(_ type: T.Type) -> T? {
         let name = name(for: type)
         let object = dependencies.object(forKey: name)
         
@@ -30,7 +34,7 @@ final class UseCaseRepository {
     
     // MARK: - Registering
     
-    func register<T>(for type: T.Type, _ factory: @escaping DependencyFactory) {
+    public func register<T>(for type: T.Type, _ factory: @escaping DependencyFactory) {
         dependencyFactories[name(for: type)] = factory
     }
     
@@ -41,7 +45,7 @@ final class UseCaseRepository {
     }
 }
 
-extension Array where Element == Action.Type {
+public extension Array where Element == Action.Type {
     func action(for type: String) throws -> Element {
         guard let metatype = first(where: { $0.type == type })
         else { throw RepositoryError.notRegistered(type) }
@@ -49,13 +53,18 @@ extension Array where Element == Action.Type {
     }
 }
 
-extension Array where Element == Component.Type {
+public extension Array where Element == Component.Type {
     func component(for type: String) throws -> Element {
         guard let metatype = first(where: { $0.type == type })
         else { throw RepositoryError.notRegistered(type) }
         return metatype
     }
+    
+    mutating func register<T>(_ type: T.Type) where T: Component {
+        append(type)
+    }
 }
 
-typealias ComponentRepository = Array<Component.Type>
-typealias ActionRepository = Array<Action.Type>
+
+public typealias ComponentRepository = Array<Component.Type>
+public typealias ActionRepository = Array<Action.Type>
