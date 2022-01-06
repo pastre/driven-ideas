@@ -63,3 +63,11 @@ extension KeyedDecodingContainer {
         T.init()
     }
 }
+
+
+extension KeyedDecodingContainer {
+    /// Ignore injected properties on JSON decoding
+    func decode<T>(_ type: T.Type, forKey key: KeyedDecodingContainer<K>.Key) throws -> T where T: ComponentAction {
+        T.init()
+    }
+}

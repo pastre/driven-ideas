@@ -5,6 +5,10 @@ enum Payloads {
     static let b: Data = {
         let dict: [[String : Any]] = [
             [
+                "type": "text",
+                "content": "testeee"
+            ],
+            [
                 "type": "bannerCarousel",
                 "banners": [
                     [

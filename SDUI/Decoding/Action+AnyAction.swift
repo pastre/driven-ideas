@@ -16,4 +16,3 @@ extension Action {
             .forEach { $0.resolveIfNeeded(using: useCaseRepository) }
     }
 }
-

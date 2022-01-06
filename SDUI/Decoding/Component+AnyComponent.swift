@@ -19,7 +19,6 @@ extension Component {
             guard let child = $0.value as? ChildComponent,
                   let label = sanitizeLabel($0.label)
             else { return }
-            print("LABEl", label)
             let nested = try decoder.drivenDecode(LazyComponentDecoding.self, from: anyComponent.componentData)
             let components = try nested.components(at: label)
             try child.resolve(components: components, using: componentRepository)
