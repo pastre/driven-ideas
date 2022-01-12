@@ -1,6 +1,12 @@
 import UIKit
 
-public final class DrivenEngine {
+public protocol DrivenEngineRendering {
+    var view: UITableView? { get }
+    func render(data: Data) throws
+}
+
+public final class DrivenEngine: DrivenEngineRendering {
+
     // MARK: - Dependencies
     
     private let componentRepository: ComponentRepository
@@ -11,7 +17,6 @@ public final class DrivenEngine {
     // MARK: - Properties
     
     private var adapter: DrivenTableViewAdapting = DrivenTableViewAdapter()
-    
     private lazy var drivenView: UITableView = {
         let view = UITableView()
         view.register(DrivenCell.self)

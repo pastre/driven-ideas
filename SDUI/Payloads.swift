@@ -1,9 +1,24 @@
 import Foundation
 
 enum Payloads {
-    
     static let b: Data = {
         let dict: [[String : Any]] = [
+            [
+                "type": "button",
+                "title": "Push",
+                "action": [
+                    "type": "openURL",
+                    "url": "mydemo://route?payload=\(c.base64EncodedString())&navigationType=push",
+                ],
+            ],
+            [
+                "type": "button",
+                "title": "Modal",
+                "action": [
+                    "type": "openURL",
+                    "url": "mydemo://route?payload=\(c.base64EncodedString())&navigationType=modal",
+                ],
+            ],
             [
                 "type": "text",
                 "content": "testeee"
@@ -13,10 +28,7 @@ enum Payloads {
                 "banners": [
                     [
                         "type": "banner",
-                        "imageURL": "https://random.dog/0942ac81-f65b-4503-8220-40ad3c28a94e.jpg",
-                        "action": [
-                            "type": "navigation"
-                        ]
+                        "imageURL": "https://random.dog/0942ac81-f65b-4503-8220-40ad3c28a94e.jpg"
                     ],
                     [
                         "type": "banner",
@@ -26,6 +38,38 @@ enum Payloads {
             ]
         ]
         return try! JSONSerialization.data(withJSONObject: dict, options: [])
+    }()
+    
+    static let c: Data = {
+        
+            let dict: [[String : Any]] = [
+                [
+                    "type": "button",
+                    "title": "open deeplink",
+                    "action": [
+                        "type": "openURL",
+                        "url": "mydemo://route",
+                    ],
+                ],
+                [
+                    "type": "text",
+                    "content": "Outra tela"
+                ],
+                [
+                    "type": "bannerCarousel",
+                    "banners": [
+                        [
+                            "type": "banner",
+                            "imageURL": "https://random.dog/0942ac81-f65b-4503-8220-40ad3c28a94e.jpg"
+                        ],
+                        [
+                            "type": "banner",
+                            "imageURL": "https://random.dog/0942ac81-f65b-4503-8220-40ad3c28a94e.jpg"
+                        ],
+                    ]
+                ]
+            ]
+            return try! JSONSerialization.data(withJSONObject: dict, options: [])
     }()
     
     static let a = """

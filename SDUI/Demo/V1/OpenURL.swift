@@ -4,6 +4,7 @@ import CoreBFF
 final class OpenURLUseCase {
     func execute(using url: URL) {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        print("OPENED", url)
     }
 }
 
