@@ -18,11 +18,11 @@
 		D7868C0D27873A9B001F3606 /* CoreBFF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7868BF827873A9B001F3606 /* CoreBFF.framework */; };
 		D7868C0E27873A9B001F3606 /* CoreBFF.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7868BF827873A9B001F3606 /* CoreBFF.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D7868C1627873AA4001F3606 /* AnyDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A9322760162C009E842A /* AnyDecodable.swift */; };
-		D7868C1727873AA4001F3606 /* Component+AnyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CADA772770B41600F30465 /* Component+AnyComponent.swift */; };
-		D7868C1827873AA4001F3606 /* ComponentDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CADA752770B3DE00F30465 /* ComponentDecoder.swift */; };
+		D7868C1727873AA4001F3606 /* ComponentDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CADA772770B41600F30465 /* ComponentDecoding.swift */; };
+		D7868C1827873AA4001F3606 /* DrivenDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CADA752770B3DE00F30465 /* DrivenDecoder.swift */; };
 		D7868C1927873AA4001F3606 /* AnyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A91A27601441009E842A /* AnyComponent.swift */; };
-		D7868C1A27873AA4001F3606 /* Action+AnyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D759D6D32785CDA10047E937 /* Action+AnyAction.swift */; };
-		D7868C1B27873AB1001F3606 /* ChildComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7868BEE278739BD001F3606 /* ChildComponent.swift */; };
+		D7868C1A27873AA4001F3606 /* ActionDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D759D6D32785CDA10047E937 /* ActionDecoding.swift */; };
+		D7868C1B27873AB1001F3606 /* ChildComponentDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7868BEE278739BD001F3606 /* ChildComponentDecoding.swift */; };
 		D7868C1C27873AB1001F3606 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CADA792770B5C900F30465 /* Action.swift */; };
 		D7868C1D27873AB1001F3606 /* TypeHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A917276013FF009E842A /* TypeHolder.swift */; };
 		D7868C1E27873AB1001F3606 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A92027601485009E842A /* Component.swift */; };
@@ -120,9 +120,9 @@
 		D738A92E276015FB009E842A /* DrivenTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivenTableViewAdapter.swift; sourceTree = "<group>"; };
 		D738A93027601612009E842A /* DrivenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivenCell.swift; sourceTree = "<group>"; };
 		D738A9322760162C009E842A /* AnyDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDecodable.swift; sourceTree = "<group>"; };
-		D759D6D32785CDA10047E937 /* Action+AnyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Action+AnyAction.swift"; sourceTree = "<group>"; };
+		D759D6D32785CDA10047E937 /* ActionDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDecoding.swift; sourceTree = "<group>"; };
 		D777BBED27833AE30080FEED /* OpenURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenURL.swift; sourceTree = "<group>"; };
-		D7868BEE278739BD001F3606 /* ChildComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildComponent.swift; sourceTree = "<group>"; };
+		D7868BEE278739BD001F3606 /* ChildComponentDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildComponentDecoding.swift; sourceTree = "<group>"; };
 		D7868BF127873A83001F3606 /* DeeplinkAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkAction.swift; sourceTree = "<group>"; };
 		D7868BF827873A9B001F3606 /* CoreBFF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreBFF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7868BFA27873A9B001F3606 /* CoreBFF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreBFF.h; sourceTree = "<group>"; };
@@ -149,8 +149,8 @@
 		D7C945D92774FD68002DA625 /* RandomNameGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNameGeneratorView.swift; sourceTree = "<group>"; };
 		D7C945DD2778B5F4002DA625 /* RandomNameGeneratorAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNameGeneratorAction.swift; sourceTree = "<group>"; };
 		D7C945DF2778B610002DA625 /* RenameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenameUseCase.swift; sourceTree = "<group>"; };
-		D7CADA752770B3DE00F30465 /* ComponentDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDecoder.swift; sourceTree = "<group>"; };
-		D7CADA772770B41600F30465 /* Component+AnyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Component+AnyComponent.swift"; sourceTree = "<group>"; };
+		D7CADA752770B3DE00F30465 /* DrivenDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivenDecoder.swift; sourceTree = "<group>"; };
+		D7CADA772770B41600F30465 /* ComponentDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDecoding.swift; sourceTree = "<group>"; };
 		D7CADA792770B5C900F30465 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		D7CADA7B2770BCCD00F30465 /* ButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModel.swift; sourceTree = "<group>"; };
 		D7CADA7F2770BD2F00F30465 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -193,7 +193,6 @@
 				D738A92C276015DD009E842A /* DrivenEngine.swift */,
 				D738A917276013FF009E842A /* TypeHolder.swift */,
 				D7C945CD2774B70C002DA625 /* Injected.swift */,
-				D7868BEE278739BD001F3606 /* ChildComponent.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -203,9 +202,10 @@
 			children = (
 				D738A91A27601441009E842A /* AnyComponent.swift */,
 				D738A9322760162C009E842A /* AnyDecodable.swift */,
-				D7CADA752770B3DE00F30465 /* ComponentDecoder.swift */,
-				D7CADA772770B41600F30465 /* Component+AnyComponent.swift */,
-				D759D6D32785CDA10047E937 /* Action+AnyAction.swift */,
+				D7CADA752770B3DE00F30465 /* DrivenDecoder.swift */,
+				D7CADA772770B41600F30465 /* ComponentDecoding.swift */,
+				D759D6D32785CDA10047E937 /* ActionDecoding.swift */,
+				D7868BEE278739BD001F3606 /* ChildComponentDecoding.swift */,
 			);
 			path = Decoding;
 			sourceTree = "<group>";
@@ -517,20 +517,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7868C1A27873AA4001F3606 /* Action+AnyAction.swift in Sources */,
+				D7868C1A27873AA4001F3606 /* ActionDecoding.swift in Sources */,
 				D7868C1627873AA4001F3606 /* AnyDecodable.swift in Sources */,
-				D7868C1B27873AB1001F3606 /* ChildComponent.swift in Sources */,
+				D7868C1B27873AB1001F3606 /* ChildComponentDecoding.swift in Sources */,
 				D7868C2427873AB8001F3606 /* DrivenCell.swift in Sources */,
 				D7868C1D27873AB1001F3606 /* TypeHolder.swift in Sources */,
 				D7868C2227873AB8001F3606 /* ComponentRendering.swift in Sources */,
 				D7868C2327873AB8001F3606 /* DrivenTableViewAdapter.swift in Sources */,
 				D7868C2127873AB1001F3606 /* Injected.swift in Sources */,
-				D7868C1727873AA4001F3606 /* Component+AnyComponent.swift in Sources */,
+				D7868C1727873AA4001F3606 /* ComponentDecoding.swift in Sources */,
 				D7868C1927873AA4001F3606 /* AnyComponent.swift in Sources */,
 				D7868C1C27873AB1001F3606 /* Action.swift in Sources */,
 				D7868C2927873CD4001F3606 /* Utils.swift in Sources */,
 				D7868C2527873AB8001F3606 /* ComponentView.swift in Sources */,
-				D7868C1827873AA4001F3606 /* ComponentDecoder.swift in Sources */,
+				D7868C1827873AA4001F3606 /* DrivenDecoder.swift in Sources */,
 				D7868C1F27873AB1001F3606 /* Repositories.swift in Sources */,
 				D7868BFC27873A9B001F3606 /* CoreBFF.docc in Sources */,
 				D7868C1E27873AB1001F3606 /* Component.swift in Sources */,

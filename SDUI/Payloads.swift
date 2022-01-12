@@ -72,7 +72,12 @@ enum Payloads {
             return try! JSONSerialization.data(withJSONObject: dict, options: [])
     }()
     
-    static let a = """
+    static var a: Data {
+        let object = try! JSONSerialization.jsonObject(with: _a.data(using: .utf8)!, options: [])
+        return try! JSONSerialization.data(withJSONObject: object, options: [])
+    }
+    
+    static let _a = """
 [
     {
         "type": "text",
