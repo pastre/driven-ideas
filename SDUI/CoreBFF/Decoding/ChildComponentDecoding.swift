@@ -30,7 +30,7 @@ public extension KeyedDecodingContainer {
         forKey key: KeyedDecodingContainer<K>.Key
     ) throws -> T? where T: ChildComponent {
         guard
-            let componentsContainer = try superDecoder().userInfo[DrivenContainerResolving.componentsKey] as? ComponentRepository
+            let context = try superDecoder().userInfo[DrivenContainerResolving.drivenContext] as? DrivenDecodingContext
         else { return nil }
         do {
             let wrapper = ChildComponent()
@@ -38,7 +38,7 @@ public extension KeyedDecodingContainer {
             var components = [Component]()
             while !container.isAtEnd {
                 let anyComponent = try container.decode(AnyComponent.self)
-                let type = try componentsContainer.component(for: anyComponent.type)
+                let type = try context.componentContainer.component(for: anyComponent.type)
                 let component = try type.init(from: try container.superDecoder())
                 components.append(component)
             }

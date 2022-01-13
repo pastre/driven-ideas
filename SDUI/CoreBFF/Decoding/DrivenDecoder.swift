@@ -8,10 +8,14 @@ enum TypeCodingKey: String, CodingKey {
     case type
 }
 
+struct DrivenDecodingContext {
+    let componentContainer: ComponentRepository
+    let actionContainer: ActionRepository
+    let useCaseContainer: UseCaseRepository
+}
+
 enum DrivenContainerResolving {
-    static let actionsKey: CodingUserInfoKey = .init(rawValue: "Actions container")!
-    static let componentsKey: CodingUserInfoKey = .init(rawValue: "Components container")!
-    static let useCasesKey: CodingUserInfoKey = .init(rawValue: "UseCases container")!
+    static let drivenContext: CodingUserInfoKey = .init(rawValue: "Driven context")!
 }
 
 final class DefaultDrivenDecoder: JSONDecoder, DrivenDecoder {
@@ -23,9 +27,10 @@ final class DefaultDrivenDecoder: JSONDecoder, DrivenDecoder {
          useCaseContainer: UseCaseRepository
     ) {
         super.init()
-        userInfo[DrivenContainerResolving.actionsKey] = actionContainer
-        userInfo[DrivenContainerResolving.componentsKey] = componentContainer
-        userInfo[DrivenContainerResolving.useCasesKey] = useCaseContainer
+        userInfo[DrivenContainerResolving.drivenContext] = DrivenDecodingContext(
+            componentContainer: componentContainer,
+            actionContainer: actionContainer,
+            useCaseContainer: useCaseContainer)
     }
     
     init(userInfo: UserInfo) {

@@ -29,17 +29,16 @@ public extension KeyedDecodingContainer {
         _ type: T.Type,
         forKey key: KeyedDecodingContainer<K>.Key
     ) throws -> T? where T: ComponentAction {
-        guard
-            let actionsContainer = try superDecoder().userInfo[DrivenContainerResolving.actionsKey] as? ActionRepository,
-            let useCaseContainer = try superDecoder().userInfo[DrivenContainerResolving.useCasesKey] as? UseCaseRepository
+        guard let decodingContext = try superDecoder().userInfo[DrivenContainerResolving.drivenContext] as? DrivenDecodingContext
         else { return nil }
+        
         do {
             let wrapper = ComponentAction() 
             let container = try self.nestedContainer(keyedBy: TypeCodingKey.self, forKey: key)
             let typeName = try container.decode(String.self, forKey: .type)
-            let type = try actionsContainer.action(for: typeName)
+            let type = try decodingContext.actionContainer.action(for: typeName)
             let action = try type.init(from: superDecoder(forKey: key))
-            action.resolve(using: useCaseContainer)
+            action.resolve(using: decodingContext.useCaseContainer)
             wrapper.resolve(using: action)
             return wrapper as? T
         } catch let DecodingError.keyNotFound(key, context) {
