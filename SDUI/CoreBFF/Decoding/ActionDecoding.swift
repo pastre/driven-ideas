@@ -34,7 +34,7 @@ public extension KeyedDecodingContainer {
             let useCaseContainer = try superDecoder().userInfo[DrivenContainerResolving.useCasesKey] as? UseCaseRepository
         else { return nil }
         do {
-            let wrapper = ComponentAction()
+            let wrapper = ComponentAction() 
             let container = try self.nestedContainer(keyedBy: TypeCodingKey.self, forKey: key)
             let typeName = try container.decode(String.self, forKey: .type)
             let type = try actionsContainer.action(for: typeName)
