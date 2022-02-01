@@ -6,9 +6,3 @@ public protocol Component: TypeHolder, Decodable {
 public extension Component {
     var action: Action? { nil } // Optional implementation
 }
-
-extension Component {
-    public func handle<T>(event: T) where T: Event {
-        // Optional implementation
-    }
-}

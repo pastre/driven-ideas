@@ -9,9 +9,8 @@ extension EventHandler {
 
 extension EventHandler {
     func handle(eventAt index: Int) {
-        guard index >= 0, index < handleableEvents.count else {
-            fatalError()
-        }
+        guard index >= 0, index < handleableEvents.count
+        else { preconditionFailure("Trying to handle an event that cannot be handled by this handler") }
         let event = handleableEvents[index]
         handle(event: event)
     }
