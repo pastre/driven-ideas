@@ -18,6 +18,7 @@ extension ActionRepository {
         repository.append(ButtonAction.self)
         repository.append(RandomNameGeneratorAction.self)
         repository.append(OpenURLAction.self)
+        repository.append(TriggerEventAction.self)
         return repository
     }()
 }
@@ -38,6 +39,14 @@ extension UseCaseRepository {
             OpenURLUseCase()
         }
         
+        return repository
+    }()
+}
+
+extension EventRepository {
+    static let `default`: Self = {
+        var repository = EventRepository()
+        repository.append(IncrementCountEvent.self)
         return repository
     }()
 }

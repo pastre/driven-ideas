@@ -25,7 +25,7 @@ public extension KeyedDecodingContainer {
         return try children(type, forKey: key) ?? .init()
     }
     
-    func children<T>(
+    private func children<T>(
         _ type: T.Type,
         forKey key: KeyedDecodingContainer<K>.Key
     ) throws -> T? where T: ChildComponent {
@@ -37,7 +37,7 @@ public extension KeyedDecodingContainer {
             var container = try nestedUnkeyedContainer(forKey: key)
             var components = [Component]()
             while !container.isAtEnd {
-                let anyComponent = try container.decode(AnyComponent.self)
+                let anyComponent = try container.decode(LazilyDecodedTypeHolder.self)
                 let type = try context.componentContainer.component(for: anyComponent.type)
                 let component = try type.init(from: try container.superDecoder())
                 components.append(component)

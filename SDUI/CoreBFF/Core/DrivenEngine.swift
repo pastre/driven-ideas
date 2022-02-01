@@ -12,6 +12,7 @@ public final class DrivenEngine: DrivenEngineRendering {
     private let componentRepository: ComponentRepository
     private let drivenDecoder: DrivenDecoder
     private let notificationCenter: NotificationCenter
+    private let eventBus: EventBus
     
     // MARK: - Properties
     
@@ -31,14 +32,20 @@ public final class DrivenEngine: DrivenEngineRendering {
         componentRepository: ComponentRepository,
         actionRepository: ActionRepository,
         useCaseRepository: UseCaseRepository,
+        eventRepository: EventRepository,
         notificationCenter: NotificationCenter = .default
     ) {
         self.componentRepository = componentRepository
         self.drivenDecoder = DefaultDrivenDecoder(
             actionContainer: actionRepository,
             componentContainer: componentRepository,
-            useCaseContainer: useCaseRepository)
+            useCaseContainer: useCaseRepository,
+            eventContainer: eventRepository)
         self.notificationCenter = notificationCenter
+        self.eventBus = .init(eventRepository: eventRepository, drivenDecoder: drivenDecoder)
+        useCaseRepository.register(for: EventBus.self) { [eventBus] in
+            eventBus
+        }
     }
     
     deinit {
@@ -46,12 +53,20 @@ public final class DrivenEngine: DrivenEngineRendering {
     }
    
     public func render(data: Data) throws {
-        let response = try JSONDecoder().decode([AnyComponent].self, from: data)
+        let response = try JSONDecoder().decode([LazilyDecodedTypeHolder].self, from: data)
         let components: [Component] = try response.map {
             let type = try componentRepository.component(for: $0.type)
-            return try type.init(from: $0, decoder: drivenDecoder)
+            let component = try type.init(from: $0, decoder: drivenDecoder)
+            if let eventHandler = component as? EventHandler {
+                eventBus.add(handler: eventHandler)
+            }
+            return component
         }
         adapter.configure(using: components)
         drivenView.reloadData()
     }
+}
+
+private enum EventHandlerCodingKeys: String, CodingKey {
+    case handleableEvents
 }

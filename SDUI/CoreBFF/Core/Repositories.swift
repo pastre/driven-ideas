@@ -66,5 +66,14 @@ public extension Array where Element == Component.Type {
 }
 
 
+extension Array where Element == Event.Type {
+    func event(for type: String) throws -> Element {
+        guard let metatype = first(where: { $0.type == type })
+        else { throw RepositoryError.notRegistered(type) }
+        return metatype
+    }
+}
+
+public typealias EventRepository = Array<Event.Type>
 public typealias ComponentRepository = Array<Component.Type>
 public typealias ActionRepository = Array<Action.Type>

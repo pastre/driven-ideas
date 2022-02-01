@@ -12,6 +12,7 @@ struct DrivenDecodingContext {
     let componentContainer: ComponentRepository
     let actionContainer: ActionRepository
     let useCaseContainer: UseCaseRepository
+    let eventContainer: EventRepository
 }
 
 enum DrivenContainerResolving {
@@ -24,13 +25,15 @@ final class DefaultDrivenDecoder: JSONDecoder, DrivenDecoder {
     
     init(actionContainer: ActionRepository,
          componentContainer: ComponentRepository,
-         useCaseContainer: UseCaseRepository
+         useCaseContainer: UseCaseRepository,
+         eventContainer: EventRepository
     ) {
         super.init()
         userInfo[DrivenContainerResolving.drivenContext] = DrivenDecodingContext(
             componentContainer: componentContainer,
             actionContainer: actionContainer,
-            useCaseContainer: useCaseContainer)
+            useCaseContainer: useCaseContainer,
+            eventContainer: eventContainer)
     }
     
     init(userInfo: UserInfo) {

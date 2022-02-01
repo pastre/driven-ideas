@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D738A926276014DC009E842A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A925276014DC009E842A /* TextView.swift */; };
 		D738A928276014F6009E842A /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A927276014F6009E842A /* TextModel.swift */; };
+		D764F30427A822A400D4DD54 /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D764F30327A822A400D4DD54 /* EventHandler.swift */; };
+		D764F30727A824F700D4DD54 /* HandledEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D764F30527A824DB00D4DD54 /* HandledEvents.swift */; };
 		D777BBEE27833AE30080FEED /* OpenURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777BBED27833AE30080FEED /* OpenURL.swift */; };
 		D7868BF227873A83001F3606 /* DeeplinkAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7868BF127873A83001F3606 /* DeeplinkAction.swift */; };
 		D7868BFC27873A9B001F3606 /* CoreBFF.docc in Sources */ = {isa = PBXBuildFile; fileRef = D7868BFB27873A9B001F3606 /* CoreBFF.docc */; };
@@ -20,7 +22,7 @@
 		D7868C1627873AA4001F3606 /* AnyDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A9322760162C009E842A /* AnyDecodable.swift */; };
 		D7868C1727873AA4001F3606 /* ComponentDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CADA772770B41600F30465 /* ComponentDecoding.swift */; };
 		D7868C1827873AA4001F3606 /* DrivenDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CADA752770B3DE00F30465 /* DrivenDecoder.swift */; };
-		D7868C1927873AA4001F3606 /* AnyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A91A27601441009E842A /* AnyComponent.swift */; };
+		D7868C1927873AA4001F3606 /* LazilyDecodedTypeHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A91A27601441009E842A /* LazilyDecodedTypeHolder.swift */; };
 		D7868C1A27873AA4001F3606 /* ActionDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D759D6D32785CDA10047E937 /* ActionDecoding.swift */; };
 		D7868C1B27873AB1001F3606 /* ChildComponentDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7868BEE278739BD001F3606 /* ChildComponentDecoding.swift */; };
 		D7868C1C27873AB1001F3606 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CADA792770B5C900F30465 /* Action.swift */; };
@@ -53,6 +55,12 @@
 		D7CADA7C2770BCCD00F30465 /* ButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CADA7B2770BCCD00F30465 /* ButtonModel.swift */; };
 		D7CADA802770BD2F00F30465 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CADA7F2770BD2F00F30465 /* ButtonView.swift */; };
 		D7ED11F32789ECCD008B9290 /* DrivenDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ED11F22789ECCD008B9290 /* DrivenDefaults.swift */; };
+		D7F8ABF027908E5100F8E09C /* EyeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8ABEF27908E5100F8E09C /* EyeModel.swift */; };
+		D7F8ABF327908E6900F8E09C /* EyeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8ABF227908E6900F8E09C /* EyeView.swift */; };
+		D7F8ABF927908F9600F8E09C /* EyeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8ABF827908F9600F8E09C /* EyeEvent.swift */; };
+		D7F8ABFE2790C3C100F8E09C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8ABFC2790BFFA00F8E09C /* Event.swift */; };
+		D7F8ABFF2790C3D200F8E09C /* TriggerEventAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8ABFA27908FCA00F8E09C /* TriggerEventAction.swift */; };
+		D7F8AC022790C80800F8E09C /* IncrementCountEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8AC012790C80800F8E09C /* IncrementCountEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -109,7 +117,7 @@
 
 /* Begin PBXFileReference section */
 		D738A917276013FF009E842A /* TypeHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeHolder.swift; sourceTree = "<group>"; };
-		D738A91A27601441009E842A /* AnyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyComponent.swift; sourceTree = "<group>"; };
+		D738A91A27601441009E842A /* LazilyDecodedTypeHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazilyDecodedTypeHolder.swift; sourceTree = "<group>"; };
 		D738A91D2760145C009E842A /* ComponentRendering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentRendering.swift; sourceTree = "<group>"; };
 		D738A92027601485009E842A /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		D738A922276014B8009E842A /* ComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentView.swift; sourceTree = "<group>"; };
@@ -121,6 +129,8 @@
 		D738A93027601612009E842A /* DrivenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivenCell.swift; sourceTree = "<group>"; };
 		D738A9322760162C009E842A /* AnyDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDecodable.swift; sourceTree = "<group>"; };
 		D759D6D32785CDA10047E937 /* ActionDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDecoding.swift; sourceTree = "<group>"; };
+		D764F30327A822A400D4DD54 /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventHandler.swift; path = ../Core/EventHandler.swift; sourceTree = "<group>"; };
+		D764F30527A824DB00D4DD54 /* HandledEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandledEvents.swift; sourceTree = "<group>"; };
 		D777BBED27833AE30080FEED /* OpenURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenURL.swift; sourceTree = "<group>"; };
 		D7868BEE278739BD001F3606 /* ChildComponentDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildComponentDecoding.swift; sourceTree = "<group>"; };
 		D7868BF127873A83001F3606 /* DeeplinkAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkAction.swift; sourceTree = "<group>"; };
@@ -155,6 +165,12 @@
 		D7CADA7B2770BCCD00F30465 /* ButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModel.swift; sourceTree = "<group>"; };
 		D7CADA7F2770BD2F00F30465 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		D7ED11F22789ECCD008B9290 /* DrivenDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivenDefaults.swift; sourceTree = "<group>"; };
+		D7F8ABEF27908E5100F8E09C /* EyeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeModel.swift; sourceTree = "<group>"; };
+		D7F8ABF227908E6900F8E09C /* EyeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeView.swift; sourceTree = "<group>"; };
+		D7F8ABF827908F9600F8E09C /* EyeEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeEvent.swift; sourceTree = "<group>"; };
+		D7F8ABFA27908FCA00F8E09C /* TriggerEventAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerEventAction.swift; sourceTree = "<group>"; };
+		D7F8ABFC2790BFFA00F8E09C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		D7F8AC012790C80800F8E09C /* IncrementCountEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementCountEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,7 +216,7 @@
 		D738A91927601435009E842A /* Decoding */ = {
 			isa = PBXGroup;
 			children = (
-				D738A91A27601441009E842A /* AnyComponent.swift */,
+				D738A91A27601441009E842A /* LazilyDecodedTypeHolder.swift */,
 				D738A9322760162C009E842A /* AnyDecodable.swift */,
 				D7CADA752770B3DE00F30465 /* DrivenDecoder.swift */,
 				D7CADA772770B41600F30465 /* ComponentDecoding.swift */,
@@ -224,6 +240,7 @@
 		D738A924276014D1009E842A /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				D7F8AC002790C7FE00F8E09C /* V3 */,
 				D7938C1E2785F05C00DF48EC /* V2 */,
 				D7938C1D2785F05400DF48EC /* V1 */,
 			);
@@ -250,6 +267,7 @@
 		D7868C2627873AD8001F3606 /* CoreBFF */ = {
 			isa = PBXGroup;
 			children = (
+				D7F8ABF427908EED00F8E09C /* Event */,
 				D738A915276013E1009E842A /* Core */,
 				D738A91927601435009E842A /* Decoding */,
 				D738A91C27601451009E842A /* View */,
@@ -273,6 +291,7 @@
 		D7938C1E2785F05C00DF48EC /* V2 */ = {
 			isa = PBXGroup;
 			children = (
+				D7F8ABF127908E5500F8E09C /* Eye */,
 				D7938C282785FC3000DF48EC /* Banner */,
 				D7938C212785F12000DF48EC /* BannerCarousel */,
 				D7868BF127873A83001F3606 /* DeeplinkAction.swift */,
@@ -371,6 +390,35 @@
 				D7C945CB2774B6DE002DA625 /* ButtonAction.swift */,
 			);
 			path = SimpleButton;
+			sourceTree = "<group>";
+		};
+		D7F8ABF127908E5500F8E09C /* Eye */ = {
+			isa = PBXGroup;
+			children = (
+				D7F8ABEF27908E5100F8E09C /* EyeModel.swift */,
+				D7F8ABF227908E6900F8E09C /* EyeView.swift */,
+				D7F8ABF827908F9600F8E09C /* EyeEvent.swift */,
+			);
+			path = Eye;
+			sourceTree = "<group>";
+		};
+		D7F8ABF427908EED00F8E09C /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				D7F8ABFC2790BFFA00F8E09C /* Event.swift */,
+				D7F8ABFA27908FCA00F8E09C /* TriggerEventAction.swift */,
+				D764F30327A822A400D4DD54 /* EventHandler.swift */,
+				D764F30527A824DB00D4DD54 /* HandledEvents.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		D7F8AC002790C7FE00F8E09C /* V3 */ = {
+			isa = PBXGroup;
+			children = (
+				D7F8AC012790C80800F8E09C /* IncrementCountEvent.swift */,
+			);
+			path = V3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,12 +569,16 @@
 				D7868C1627873AA4001F3606 /* AnyDecodable.swift in Sources */,
 				D7868C1B27873AB1001F3606 /* ChildComponentDecoding.swift in Sources */,
 				D7868C2427873AB8001F3606 /* DrivenCell.swift in Sources */,
+				D7F8ABFE2790C3C100F8E09C /* Event.swift in Sources */,
 				D7868C1D27873AB1001F3606 /* TypeHolder.swift in Sources */,
 				D7868C2227873AB8001F3606 /* ComponentRendering.swift in Sources */,
+				D764F30727A824F700D4DD54 /* HandledEvents.swift in Sources */,
+				D764F30427A822A400D4DD54 /* EventHandler.swift in Sources */,
 				D7868C2327873AB8001F3606 /* DrivenTableViewAdapter.swift in Sources */,
+				D7F8ABFF2790C3D200F8E09C /* TriggerEventAction.swift in Sources */,
 				D7868C2127873AB1001F3606 /* Injected.swift in Sources */,
 				D7868C1727873AA4001F3606 /* ComponentDecoding.swift in Sources */,
-				D7868C1927873AA4001F3606 /* AnyComponent.swift in Sources */,
+				D7868C1927873AA4001F3606 /* LazilyDecodedTypeHolder.swift in Sources */,
 				D7868C1C27873AB1001F3606 /* Action.swift in Sources */,
 				D7868C2927873CD4001F3606 /* Utils.swift in Sources */,
 				D7868C2527873AB8001F3606 /* ComponentView.swift in Sources */,
@@ -557,17 +609,21 @@
 				D7C945E02778B610002DA625 /* RenameUseCase.swift in Sources */,
 				D7A5BF2D273DC28C008098C8 /* DemoViewController.swift in Sources */,
 				D7A5BF29273DC28C008098C8 /* AppDelegate.swift in Sources */,
+				D7F8ABF027908E5100F8E09C /* EyeModel.swift in Sources */,
 				D7C945D82774FD56002DA625 /* RandomNameGeneratorModel.swift in Sources */,
 				D7C945CC2774B6DE002DA625 /* ButtonAction.swift in Sources */,
 				D777BBEE27833AE30080FEED /* OpenURL.swift in Sources */,
 				D7C945DA2774FD68002DA625 /* RandomNameGeneratorView.swift in Sources */,
 				D738A928276014F6009E842A /* TextModel.swift in Sources */,
 				D7938C252785F61200DF48EC /* Payloads.swift in Sources */,
+				D7F8ABF927908F9600F8E09C /* EyeEvent.swift in Sources */,
 				D738A926276014DC009E842A /* TextView.swift in Sources */,
 				D7ED11F32789ECCD008B9290 /* DrivenDefaults.swift in Sources */,
+				D7F8AC022790C80800F8E09C /* IncrementCountEvent.swift in Sources */,
 				D7A5BF2B273DC28C008098C8 /* SceneDelegate.swift in Sources */,
 				D7938C232785F2CF00DF48EC /* BannerCarouselView.swift in Sources */,
 				D7938C2A2785FC3A00DF48EC /* BannerView.swift in Sources */,
+				D7F8ABF327908E6900F8E09C /* EyeView.swift in Sources */,
 				D7938C272785FC1400DF48EC /* Banner.swift in Sources */,
 				D7C945D02774BF87002DA625 /* PrintUseCase.swift in Sources */,
 				D7868BF227873A83001F3606 /* DeeplinkAction.swift in Sources */,

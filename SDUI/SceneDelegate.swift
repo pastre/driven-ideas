@@ -37,7 +37,8 @@ final class DrivenNavigationHandler {
         let newEngine = DrivenEngine(
             componentRepository: .default,
             actionRepository: .default,
-            useCaseRepository: .default)
+            useCaseRepository: .default,
+            eventRepository: .default)
         switch navigationType {
         case .push:
             let newController = makeDrivenController()
@@ -71,7 +72,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private let drivenNavigationHandler = DrivenNavigationHandler(factory: DrivenEngine(
         componentRepository: .default,
         actionRepository: .default,
-        useCaseRepository: .default
+        useCaseRepository: .default,
+        eventRepository: .default
     ))
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {

@@ -1,6 +1,34 @@
 import Foundation
 
 enum Payloads {
+    static let communication: Data = {
+        let id = UUID().uuidString
+        let dict: [[String : Any]] = [
+            [
+                "type": "button",
+                "title": "Increment",
+                "action": [
+                    "type": "trigger",
+                    "event": [
+                        "type": "incrementCountEvent",
+                        "id": id
+                    ]
+                ],
+            ],
+            [
+                "type": "text",
+                "content": "0",
+                "handleableEvents": [
+                    [
+                        "type": "incrementCountEvent",
+                        "id": id,
+                    ]
+                ]
+            ],
+        ]
+        return try! JSONSerialization.data(withJSONObject: dict, options: [])
+    }()
+    
     static let b: Data = {
         let dict: [[String : Any]] = [
             [
