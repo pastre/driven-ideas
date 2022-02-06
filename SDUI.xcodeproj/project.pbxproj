@@ -14,8 +14,6 @@
 		D777BBEE27833AE30080FEED /* OpenURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777BBED27833AE30080FEED /* OpenURL.swift */; };
 		D7868BF227873A83001F3606 /* DeeplinkAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7868BF127873A83001F3606 /* DeeplinkAction.swift */; };
 		D7868BFC27873A9B001F3606 /* CoreBFF.docc in Sources */ = {isa = PBXBuildFile; fileRef = D7868BFB27873A9B001F3606 /* CoreBFF.docc */; };
-		D7868C0227873A9B001F3606 /* CoreBFF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7868BF827873A9B001F3606 /* CoreBFF.framework */; };
-		D7868C0927873A9B001F3606 /* CoreBFFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7868C0827873A9B001F3606 /* CoreBFFTests.swift */; };
 		D7868C0A27873A9B001F3606 /* CoreBFF.h in Headers */ = {isa = PBXBuildFile; fileRef = D7868BFA27873A9B001F3606 /* CoreBFF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D7868C0D27873A9B001F3606 /* CoreBFF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7868BF827873A9B001F3606 /* CoreBFF.framework */; };
 		D7868C0E27873A9B001F3606 /* CoreBFF.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7868BF827873A9B001F3606 /* CoreBFF.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -78,20 +76,6 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
-		D7868C0327873A9B001F3606 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7A5BF1D273DC28C008098C8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D7868BF727873A9B001F3606;
-			remoteInfo = CoreBFF;
-		};
-		D7868C0527873A9B001F3606 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7A5BF1D273DC28C008098C8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D7A5BF24273DC28C008098C8;
-			remoteInfo = SDUI;
-		};
 		D7868C0B27873A9B001F3606 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D7A5BF1D273DC28C008098C8 /* Project object */;
@@ -137,8 +121,6 @@
 		D7868BF827873A9B001F3606 /* CoreBFF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreBFF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7868BFA27873A9B001F3606 /* CoreBFF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreBFF.h; sourceTree = "<group>"; };
 		D7868BFB27873A9B001F3606 /* CoreBFF.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = CoreBFF.docc; sourceTree = "<group>"; };
-		D7868C0127873A9B001F3606 /* CoreBFFTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreBFFTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7868C0827873A9B001F3606 /* CoreBFFTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBFFTests.swift; sourceTree = "<group>"; };
 		D7868C2727873AE7001F3606 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D7938C1F2785F06700DF48EC /* BannerCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCarousel.swift; sourceTree = "<group>"; };
 		D7938C222785F2CF00DF48EC /* BannerCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCarouselView.swift; sourceTree = "<group>"; };
@@ -181,14 +163,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D7868BFE27873A9B001F3606 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D7868C0227873A9B001F3606 /* CoreBFF.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D7A5BF22273DC28C008098C8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -222,6 +196,7 @@
 				D7CADA772770B41600F30465 /* ComponentDecoding.swift */,
 				D759D6D32785CDA10047E937 /* ActionDecoding.swift */,
 				D7868BEE278739BD001F3606 /* ChildComponentDecoding.swift */,
+				D764F30527A824DB00D4DD54 /* HandledEvents.swift */,
 			);
 			path = Decoding;
 			sourceTree = "<group>";
@@ -254,14 +229,6 @@
 				D7868BFB27873A9B001F3606 /* CoreBFF.docc */,
 			);
 			path = CoreBFF;
-			sourceTree = "<group>";
-		};
-		D7868C0727873A9B001F3606 /* CoreBFFTests */ = {
-			isa = PBXGroup;
-			children = (
-				D7868C0827873A9B001F3606 /* CoreBFFTests.swift */,
-			);
-			path = CoreBFFTests;
 			sourceTree = "<group>";
 		};
 		D7868C2627873AD8001F3606 /* CoreBFF */ = {
@@ -322,7 +289,6 @@
 			children = (
 				D7A5BF27273DC28C008098C8 /* SDUI */,
 				D7868BF927873A9B001F3606 /* CoreBFF */,
-				D7868C0727873A9B001F3606 /* CoreBFFTests */,
 				D7A5BF26273DC28C008098C8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -332,7 +298,6 @@
 			children = (
 				D7A5BF25273DC28C008098C8 /* SDUI.app */,
 				D7868BF827873A9B001F3606 /* CoreBFF.framework */,
-				D7868C0127873A9B001F3606 /* CoreBFFTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -408,7 +373,6 @@
 				D7F8ABFC2790BFFA00F8E09C /* Event.swift */,
 				D7F8ABFA27908FCA00F8E09C /* TriggerEventAction.swift */,
 				D764F30327A822A400D4DD54 /* EventHandler.swift */,
-				D764F30527A824DB00D4DD54 /* HandledEvents.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -453,25 +417,6 @@
 			productReference = D7868BF827873A9B001F3606 /* CoreBFF.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D7868C0027873A9B001F3606 /* CoreBFFTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D7868C1327873A9B001F3606 /* Build configuration list for PBXNativeTarget "CoreBFFTests" */;
-			buildPhases = (
-				D7868BFD27873A9B001F3606 /* Sources */,
-				D7868BFE27873A9B001F3606 /* Frameworks */,
-				D7868BFF27873A9B001F3606 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D7868C0427873A9B001F3606 /* PBXTargetDependency */,
-				D7868C0627873A9B001F3606 /* PBXTargetDependency */,
-			);
-			name = CoreBFFTests;
-			productName = CoreBFFTests;
-			productReference = D7868C0127873A9B001F3606 /* CoreBFFTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		D7A5BF24273DC28C008098C8 /* SDUI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7A5BF39273DC28F008098C8 /* Build configuration list for PBXNativeTarget "SDUI" */;
@@ -505,10 +450,6 @@
 					D7868BF727873A9B001F3606 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
-					D7868C0027873A9B001F3606 = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = D7A5BF24273DC28C008098C8;
-					};
 					D7A5BF24273DC28C008098C8 = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -529,20 +470,12 @@
 			targets = (
 				D7A5BF24273DC28C008098C8 /* SDUI */,
 				D7868BF727873A9B001F3606 /* CoreBFF */,
-				D7868C0027873A9B001F3606 /* CoreBFFTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D7868BF627873A9B001F3606 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D7868BFF27873A9B001F3606 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -590,14 +523,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D7868BFD27873A9B001F3606 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D7868C0927873A9B001F3606 /* CoreBFFTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D7A5BF21273DC28C008098C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -633,16 +558,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D7868C0427873A9B001F3606 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D7868BF727873A9B001F3606 /* CoreBFF */;
-			targetProxy = D7868C0327873A9B001F3606 /* PBXContainerItemProxy */;
-		};
-		D7868C0627873A9B001F3606 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D7A5BF24273DC28C008098C8 /* SDUI */;
-			targetProxy = D7868C0527873A9B001F3606 /* PBXContainerItemProxy */;
-		};
 		D7868C0C27873A9B001F3606 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D7868BF727873A9B001F3606 /* CoreBFF */;
@@ -721,44 +636,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D7868C1427873A9B001F3606 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 89A6SD54N6;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.CoreBFFTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SDUI.app/SDUI";
-			};
-			name = Debug;
-		};
-		D7868C1527873A9B001F3606 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 89A6SD54N6;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.CoreBFFTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SDUI.app/SDUI";
 			};
 			name = Release;
 		};
@@ -948,15 +825,6 @@
 			buildConfigurations = (
 				D7868C1027873A9B001F3606 /* Debug */,
 				D7868C1127873A9B001F3606 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D7868C1327873A9B001F3606 /* Build configuration list for PBXNativeTarget "CoreBFFTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D7868C1427873A9B001F3606 /* Debug */,
-				D7868C1527873A9B001F3606 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -33,6 +33,13 @@ enum Payloads {
         let dict: [[String : Any]] = [
             [
                 "type": "button",
+                "title": "print",
+                "action": [
+                    "type": "buttonAction"
+                ]
+            ],
+            [
+                "type": "button",
                 "title": "Push",
                 "action": [
                     "type": "openURL",
@@ -105,7 +112,7 @@ enum Payloads {
         return try! JSONSerialization.data(withJSONObject: object, options: [])
     }
     
-    static let _a = """
+    private static let _a = """
 [
     {
         "type": "text",
@@ -136,13 +143,6 @@ enum Payloads {
         "name": "Generate new item",
         "action": {
             "type": "generateNewName"
-        }
-    },
-    {
-        "type": "button",
-        "title": "Navigate",
-        "action": {
-            "type": "navigation"
         }
     },
     {

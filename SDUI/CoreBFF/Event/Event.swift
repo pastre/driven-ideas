@@ -21,6 +21,7 @@ public final class EventBus {
         guard let event = event else { return }
         handlers
             .filter { $0.handleableEvents.contains(where: { event.type == $0.type })}
+            // TODO filter based on ID
             .forEach {
                 guard let index = $0.handleableEvents.firstIndex(where: { event.type == $0.type })
                 else { return }

@@ -22,7 +22,7 @@ final class DemoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let data = Payloads.communication
+        let data = Payloads.a
         do {
             try engine.render(data: data)
         } catch {

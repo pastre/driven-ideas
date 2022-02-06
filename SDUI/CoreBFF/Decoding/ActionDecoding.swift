@@ -25,7 +25,7 @@ public extension KeyedDecodingContainer {
         return try action(type, forKey: key) ?? .init()
     }
     
-    func action<T>(
+    private func action<T>(
         _ type: T.Type,
         forKey key: KeyedDecodingContainer<K>.Key
     ) throws -> T? where T: ComponentAction {

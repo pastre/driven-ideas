@@ -5,6 +5,7 @@ final class TextModel: Component {
     lazy var view: DrivenView<TextModel> = { [unowned self] in
         TextView(model: self)
     }()
+    
     var content: String
     
     @ComponentAction
