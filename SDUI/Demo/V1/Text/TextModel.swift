@@ -1,4 +1,5 @@
 import CoreBFF
+import UIKit
 
 final class TextModel: Component {
     static var type: String { "text" }
@@ -24,4 +25,3 @@ extension TextModel: EventHandler {
         view.renderModel()
     }
 }
-

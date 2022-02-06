@@ -43,7 +43,7 @@ enum Payloads {
                 "title": "Push",
                 "action": [
                     "type": "openURL",
-                    "url": "mydemo://route?payload=\(c.base64EncodedString())&navigationType=push",
+                    "url": "mydemo://route?payload=\(nestedComponents.base64EncodedString())&navigationType=push",
                 ],
             ],
             [
@@ -51,7 +51,7 @@ enum Payloads {
                 "title": "Modal",
                 "action": [
                     "type": "openURL",
-                    "url": "mydemo://route?payload=\(c.base64EncodedString())&navigationType=modal",
+                    "url": "mydemo://route?payload=\(nestedComponents.base64EncodedString())&navigationType=modal",
                 ],
             ],
             [
@@ -75,20 +75,12 @@ enum Payloads {
         return try! JSONSerialization.data(withJSONObject: dict, options: [])
     }()
     
-    static let c: Data = {
+    static let nestedComponents: Data = {
         
             let dict: [[String : Any]] = [
                 [
-                    "type": "button",
-                    "title": "open deeplink",
-                    "action": [
-                        "type": "openURL",
-                        "url": "mydemo://route",
-                    ],
-                ],
-                [
                     "type": "text",
-                    "content": "Outra tela"
+                    "content": "Nested component"
                 ],
                 [
                     "type": "bannerCarousel",
@@ -107,7 +99,7 @@ enum Payloads {
             return try! JSONSerialization.data(withJSONObject: dict, options: [])
     }()
     
-    static var a: Data {
+    static var simpleDemo: Data {
         let object = try! JSONSerialization.jsonObject(with: _a.data(using: .utf8)!, options: [])
         return try! JSONSerialization.data(withJSONObject: object, options: [])
     }
@@ -116,23 +108,11 @@ enum Payloads {
 [
     {
         "type": "text",
-        "content": "asd"
-    },
-    {
-        "type": "text",
-        "content" : "asd"
-    },
-    {
-        "type": "text",
-        "content" : "asd"
-    },
-    {
-        "type": "text",
-        "content" : "wqe"
+        "content": "This is static text"
     },
     {
         "type": "button",
-        "title" : "clica ai",
+        "title" : "Print to the console",
         "action": {
             "type": "buttonAction",
             "stringToPrint": "testeee"
@@ -140,7 +120,7 @@ enum Payloads {
     },
     {
         "type": "randomNameGenerator",
-        "name": "Generate new item",
+        "name": "Mutate this state",
         "action": {
             "type": "generateNewName"
         }
@@ -155,5 +135,4 @@ enum Payloads {
     }
 ]
 """
-
 }
