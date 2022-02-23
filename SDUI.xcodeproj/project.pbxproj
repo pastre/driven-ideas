@@ -12,6 +12,7 @@
 		D715D79E27C672DB0011C8FD /* ComponentRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D715D79D27C672DB0011C8FD /* ComponentRepositoryTests.swift */; };
 		D715D7A027C672E80011C8FD /* EventRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D715D79F27C672E80011C8FD /* EventRepositoryTests.swift */; };
 		D715D7A227C672F60011C8FD /* UseCaseRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D715D7A127C672F60011C8FD /* UseCaseRepositoryTests.swift */; };
+		D715D7A527C6735C0011C8FD /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D715D7A327C6735A0011C8FD /* EventBus.swift */; };
 		D738A926276014DC009E842A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A925276014DC009E842A /* TextView.swift */; };
 		D738A928276014F6009E842A /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738A927276014F6009E842A /* TextModel.swift */; };
 		D764F30427A822A400D4DD54 /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D764F30327A822A400D4DD54 /* EventHandler.swift */; };
@@ -117,6 +118,7 @@
 		D715D79D27C672DB0011C8FD /* ComponentRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentRepositoryTests.swift; sourceTree = "<group>"; };
 		D715D79F27C672E80011C8FD /* EventRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRepositoryTests.swift; sourceTree = "<group>"; };
 		D715D7A127C672F60011C8FD /* UseCaseRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseRepositoryTests.swift; sourceTree = "<group>"; };
+		D715D7A327C6735A0011C8FD /* EventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBus.swift; sourceTree = "<group>"; };
 		D738A917276013FF009E842A /* TypeHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeHolder.swift; sourceTree = "<group>"; };
 		D738A91A27601441009E842A /* LazilyDecodedTypeHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazilyDecodedTypeHolder.swift; sourceTree = "<group>"; };
 		D738A91D2760145C009E842A /* ComponentRendering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentRendering.swift; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				D7F8ABFC2790BFFA00F8E09C /* Event.swift */,
 				D7F8ABFA27908FCA00F8E09C /* TriggerEventAction.swift */,
 				D764F30327A822A400D4DD54 /* EventHandler.swift */,
+				D715D7A327C6735A0011C8FD /* EventBus.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				D764F30427A822A400D4DD54 /* EventHandler.swift in Sources */,
 				D7868C2327873AB8001F3606 /* DrivenTableViewAdapter.swift in Sources */,
 				D7F8ABFF2790C3D200F8E09C /* TriggerEventAction.swift in Sources */,
+				D715D7A527C6735C0011C8FD /* EventBus.swift in Sources */,
 				D7868C2127873AB1001F3606 /* Injected.swift in Sources */,
 				D7868C1727873AA4001F3606 /* ComponentDecoding.swift in Sources */,
 				D7868C1927873AA4001F3606 /* LazilyDecodedTypeHolder.swift in Sources */,
