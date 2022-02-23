@@ -1,6 +1,6 @@
 import Foundation
 
-enum RepositoryError: Error {
+enum RepositoryError: Error, Equatable {
     case notRegistered(String)
 }
 

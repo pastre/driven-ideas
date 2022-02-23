@@ -39,7 +39,7 @@ public extension KeyedDecodingContainer {
             while !container.isAtEnd {
                 let anyComponent = try container.decode(LazilyDecodedTypeHolder.self)
                 let type = try context.componentContainer.component(for: anyComponent.type)
-                let component = try type.init(from: try container.superDecoder())
+                let component = try type.init(from: try superDecoder())
                 components.append(component)
             }
             try wrapper.resolve(using: components)
