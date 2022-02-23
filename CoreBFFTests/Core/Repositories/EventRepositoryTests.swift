@@ -31,5 +31,6 @@ final class EventRepositoryTests: XCTestCase {
 }
 
 struct DummyEvent: Event {
+    var id: String { UUID().uuidString }
     static var type: String { "dummy" }
 }
